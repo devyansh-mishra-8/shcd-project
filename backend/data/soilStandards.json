@@ -1,0 +1,67 @@
+{
+  "nitrogen": {
+    "unit": "kg/ha",
+    "low": 280,
+    "high": 560
+  },
+  "phosphorus": {
+    "unit": "kg/ha",
+    "low": 22,
+    "high": 56
+  },
+  "potassium": {
+    "unit": "kg/ha",
+    "low": 140,
+    "high": 280
+  },
+  "ph": {
+    "unit": "",
+    "low": 6.5,
+    "high": 7.5,
+    "labels": {
+      "low": "Acidic",
+      "medium": "Neutral",
+      "high": "Alkaline"
+    }
+  },
+  "ec": {
+    "unit": "dS/m",
+    "low": 0.2,
+    "high": 0.8
+  },
+  "organicCarbon": {
+    "unit": "%",
+    "low": 0.5,
+    "high": 0.75
+  },
+  "sulphur": {
+    "unit": "ppm",
+    "low": 10,
+    "high": 20
+  },
+  "zinc": {
+    "unit": "ppm",
+    "low": 0.6,
+    "high": 1.2
+  },
+  "boron": {
+    "unit": "ppm",
+    "low": 0.5,
+    "high": 1.0
+  },
+  "iron": {
+    "unit": "ppm",
+    "low": 4.5,
+    "high": 9
+  },
+  "manganese": {
+    "unit": "ppm",
+    "low": 2,
+    "high": 4
+  },
+  "copper": {
+    "unit": "ppm",
+    "low": 0.5,
+    "high": 1.0
+  }
+}

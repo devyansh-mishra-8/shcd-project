@@ -1,0 +1,37 @@
+{
+  "wheat": {
+    "nitrogen": 140,
+    "phosphorus": 60,
+    "potassium": 40
+  },
+  "rice": {
+    "nitrogen": 110,
+    "phosphorus": 55,
+    "potassium": 50
+  },
+  "maize": {
+    "nitrogen": 120,
+    "phosphorus": 60,
+    "potassium": 40
+  },
+  "cotton": {
+    "nitrogen": 90,
+    "phosphorus": 45,
+    "potassium": 45
+  },
+  "soybean": {
+    "nitrogen": 25,
+    "phosphorus": 60,
+    "potassium": 30
+  },
+  "mustard": {
+    "nitrogen": 60,
+    "phosphorus": 40,
+    "potassium": 40
+  },
+  "bajra": {
+    "nitrogen": 50,
+    "phosphorus": 25,
+    "potassium": 10
+  }
+}

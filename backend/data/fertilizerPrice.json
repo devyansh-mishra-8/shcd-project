@@ -1,0 +1,155 @@
+{
+  "Urea": {
+    "pricePerBag": 266,
+    "priceRange": [260, 320],
+    "bagSizeKg": 45,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "DAP": {
+    "pricePerBag": 1375,
+    "priceRange": [1300, 1500],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "MOP": {
+    "pricePerBag": 1600,
+    "priceRange": [1500, 1800],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "SSP": {
+    "pricePerBag": 1400,
+    "priceRange": [1300, 1500],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "TSP": {
+    "pricePerBag": 2000,
+    "priceRange": [1800, 2200],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+
+  "NPK 10:26:26": {
+    "pricePerBag": 1825,
+    "priceRange": [1700, 2000],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "NPK 12:32:16": {
+    "pricePerBag": 1725,
+    "priceRange": [1600, 1900],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "NPK 17:17:17": {
+    "pricePerBag": 1750,
+    "priceRange": [1600, 2000],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "NPK 14:35:14": {
+    "pricePerBag": 1850,
+    "priceRange": [1700, 2100],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+
+  "Ammonium Sulphate": {
+    "pricePerBag": 1450,
+    "priceRange": [1300, 1600],
+    "bagSizeKg": 50,
+    "type": "subsidized",
+    "lastUpdated": "2026-03"
+  },
+  "Calcium Ammonium Nitrate": {
+    "pricePerBag": 2000,
+    "priceRange": [1800, 2200],
+    "bagSizeKg": 50,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+
+  "Gypsum": {
+    "pricePerBag": 1000,
+    "priceRange": [900, 1200],
+    "bagSizeKg": 50,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+  "Magnesium Sulphate": {
+    "pricePerBag": 2000,
+    "priceRange": [1800, 2300],
+    "bagSizeKg": 50,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+
+  "Zinc Sulphate 33%": {
+    "pricePerBag": 1200,
+    "priceRange": [1100, 1400],
+    "bagSizeKg": 25,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+  "Ferrous Sulphate": {
+    "pricePerBag": 1400,
+    "priceRange": [1300, 1600],
+    "bagSizeKg": 25,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+  "Copper Sulphate": {
+    "pricePerBag": 1500,
+    "priceRange": [1400, 1700],
+    "bagSizeKg": 25,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+  "Manganese Sulphate": {
+    "pricePerBag": 2000,
+    "priceRange": [1800, 2200],
+    "bagSizeKg": 25,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+  "Borax": {
+    "pricePerBag": 1200,
+    "priceRange": [1100, 1400],
+    "bagSizeKg": 25,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+
+  "Potassium Nitrate": {
+    "pricePerBag": 14500,
+    "priceRange": [13000, 16000],
+    "bagSizeKg": 50,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+  "Calcium Nitrate": {
+    "pricePerBag": 1800,
+    "priceRange": [1600, 2000],
+    "bagSizeKg": 25,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  },
+
+  "NPK 19:19:19": {
+    "pricePerBag": 15000,
+    "priceRange": [14000, 17000],
+    "bagSizeKg": 50,
+    "type": "market",
+    "lastUpdated": "2026-03"
+  }
+}

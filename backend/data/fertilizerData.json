@@ -1,0 +1,143 @@
+{
+  "urea": {
+    "type": "straight",
+    "nitrogen": 46,
+    "phosphorus": 0,
+    "potassium": 0,
+    "sulphur": 0,
+    "unit": "%"
+  },
+  "dap": {
+    "type": "complex",
+    "nitrogen": 18,
+    "phosphorus": 46,
+    "potassium": 0,
+    "sulphur": 0,
+    "unit": "%"
+  },
+  "mop": {
+    "type": "straight",
+    "nitrogen": 0,
+    "phosphorus": 0,
+    "potassium": 60,
+    "sulphur": 0,
+    "unit": "%"
+  },
+  "ssp": {
+    "type": "straight",
+    "nitrogen": 0,
+    "phosphorus": 16,
+    "potassium": 0,
+    "sulphur": 12,
+    "unit": "%"
+  },
+
+  "npk_10_26_26": {
+    "type": "complex",
+    "nitrogen": 10,
+    "phosphorus": 26,
+    "potassium": 26,
+    "sulphur": 0,
+    "unit": "%"
+  },
+  "npk_12_32_16": {
+    "type": "complex",
+    "nitrogen": 12,
+    "phosphorus": 32,
+    "potassium": 16,
+    "sulphur": 0,
+    "unit": "%"
+  },
+  "npk_19_19_19": {
+    "type": "complex",
+    "nitrogen": 19,
+    "phosphorus": 19,
+    "potassium": 19,
+    "sulphur": 0,
+    "unit": "%"
+  },
+
+  "zinc_sulphate_21": {
+    "type": "micronutrient",
+    "nitrogen": 0,
+    "phosphorus": 0,
+    "potassium": 0,
+    "sulphur": 0,
+    "zinc": 21,
+    "unit": "%"
+  },
+  "zinc_sulphate_33": {
+    "type": "micronutrient",
+    "nitrogen": 0,
+    "phosphorus": 0,
+    "potassium": 0,
+    "sulphur": 0,
+    "zinc": 33,
+    "unit": "%"
+  },
+  "zinc_edta": {
+    "type": "micronutrient",
+    "zinc": 12,
+    "unit": "%"
+  },
+
+  "ferrous_sulphate": {
+    "type": "micronutrient",
+    "iron": 19,
+    "unit": "%"
+  },
+  "iron_edta": {
+    "type": "micronutrient",
+    "iron": 12,
+    "unit": "%"
+  },
+
+  "manganese_sulphate": {
+    "type": "micronutrient",
+    "manganese": 30.5,
+    "unit": "%"
+  },
+  "manganese_sulphate_mono": {
+    "type": "micronutrient",
+    "manganese": 32,
+    "unit": "%"
+  },
+  "manganese_edta": {
+    "type": "micronutrient",
+    "manganese": 13,
+    "unit": "%"
+  },
+
+  "copper_sulphate": {
+    "type": "micronutrient",
+    "copper": 25,
+    "unit": "%"
+  },
+  "copper_edta": {
+    "type": "micronutrient",
+    "copper": 12,
+    "unit": "%"
+  },
+
+  "borax": {
+    "type": "micronutrient",
+    "boron": 11.3,
+    "unit": "%"
+  },
+  "boric_acid": {
+    "type": "micronutrient",
+    "boron": 17.5,
+    "unit": "%"
+  },
+  "sodium_borate": {
+    "type": "micronutrient",
+    "boron": 20.8,
+    "unit": "%"
+  },
+
+  "gypsum": {
+    "type": "straight",
+    "sulphur": 18,
+    "unit": "%"
+  }
+}

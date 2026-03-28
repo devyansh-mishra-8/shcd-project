@@ -1,0 +1,204 @@
+{
+  "wheat": [
+    {
+      "stage": "Basal",
+      "timing": "Before Sowing",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium", "sulphur"],
+      "advice": "Apply fertilizers before sowing during field preparation"
+    },
+    {
+      "stage": "Crown Root Initiation",
+      "timing": "20-25 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen after first irrigation for better root development"
+    },
+    {
+      "stage": "First Node Stage",
+      "timing": "40-45 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen during active vegetative growth"
+    },
+    {
+      "stage": "Flowering",
+      "timing": "60-70 DAS",
+      "type": "foliar",
+      "nutrients": ["zinc", "boron", "iron", "manganese", "copper"],
+      "advice": "Apply micronutrients as foliar spray during flowering stage"
+    }
+  ],
+
+  "rice": [
+    {
+      "stage": "Basal",
+      "timing": "At Transplanting",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium", "sulphur"],
+      "advice": "Apply fertilizers at the time of transplanting in puddled field"
+    },
+    {
+      "stage": "Tillering",
+      "timing": "20-25 DAT",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen during tillering to promote shoot growth"
+    },
+    {
+      "stage": "Panicle Initiation",
+      "timing": "45-50 DAT",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen", "potassium"],
+      "advice": "Apply nitrogen and potassium at panicle initiation for grain formation"
+    },
+    {
+      "stage": "Early Growth",
+      "timing": "10-15 DAT",
+      "type": "foliar",
+      "nutrients": ["zinc", "iron"],
+      "advice": "Apply micronutrients early to prevent deficiency symptoms"
+    }
+  ],
+
+  "maize": [
+    {
+      "stage": "Basal",
+      "timing": "Before Sowing",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium"],
+      "advice": "Apply basal fertilizers during field preparation before sowing"
+    },
+    {
+      "stage": "Knee-High Stage",
+      "timing": "20-25 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen at knee-high stage for rapid vegetative growth"
+    },
+    {
+      "stage": "Tasseling",
+      "timing": "45-50 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen", "potassium"],
+      "advice": "Apply nitrogen and potassium at tasseling for better yield"
+    },
+    {
+      "stage": "Early Growth",
+      "timing": "10-15 DAS",
+      "type": "foliar",
+      "nutrients": ["zinc"],
+      "advice": "Apply zinc early to support healthy plant development"
+    }
+  ],
+
+  "cotton": [
+    {
+      "stage": "Basal",
+      "timing": "Before Sowing",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium", "sulphur", "zinc", "boron"],
+      "advice": "Apply basal fertilizers before sowing for proper crop establishment"
+    },
+    {
+      "stage": "Vegetative Growth",
+      "timing": "30 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen during vegetative growth for better plant structure"
+    },
+    {
+      "stage": "Flowering",
+      "timing": "60 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen", "boron"],
+      "advice": "Apply nitrogen and boron during flowering for better boll setting"
+    },
+    {
+      "stage": "Boll Formation",
+      "timing": "90 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen", "potassium"],
+      "advice": "Apply nitrogen and potassium during boll formation for yield improvement"
+    }
+  ],
+
+  "soybean": [
+    {
+      "stage": "Basal",
+      "timing": "Before Sowing",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium", "sulphur"],
+      "advice": "Apply basal fertilizers before sowing for better germination"
+    },
+    {
+      "stage": "Vegetative Growth",
+      "timing": "20 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen during vegetative stage for better plant growth"
+    },
+    {
+      "stage": "Flowering",
+      "timing": "40 DAS",
+      "type": "foliar",
+      "nutrients": ["zinc", "boron"],
+      "advice": "Apply micronutrients during flowering for better pod formation"
+    }
+  ],
+
+  "mustard": [
+    {
+      "stage": "Basal",
+      "timing": "Before Sowing",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium", "sulphur", "zinc", "boron"],
+      "advice": "Apply basal fertilizers before sowing for good crop establishment"
+    },
+    {
+      "stage": "First Irrigation",
+      "timing": "20-25 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen at first irrigation for better growth"
+    },
+    {
+      "stage": "Flowering",
+      "timing": "45 DAS",
+      "type": "foliar",
+      "nutrients": ["boron"],
+      "advice": "Apply boron during flowering for better seed development"
+    }
+  ],
+
+  "bajra": [
+    {
+      "stage": "Basal",
+      "timing": "Before Sowing",
+      "type": "basal",
+      "nutrients": ["nitrogen", "phosphorus", "potassium"],
+      "advice": "Apply basal fertilizers before sowing during field preparation"
+    },
+    {
+      "stage": "Tillering",
+      "timing": "20 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen during tillering stage for better plant growth"
+    },
+    {
+      "stage": "Knee-High Stage",
+      "timing": "35 DAS",
+      "type": "top_dressing",
+      "nutrients": ["nitrogen"],
+      "advice": "Apply nitrogen at knee-high stage for strong stem development"
+    },
+    {
+      "stage": "Early Growth",
+      "timing": "10-15 DAS",
+      "type": "foliar",
+      "nutrients": ["zinc", "sulphur"],
+      "advice": "Apply micronutrients early to avoid deficiency and improve growth"
+    }
+  ]
+}
