@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const SoilScan = require("../models/SoilScan");
 const processSoilScan = require("../services/soilScanService");
 
@@ -24,7 +25,9 @@ exports.createSoilScan = async (req, res, next) => {
 // GET ALL
 exports.getAllSoilScans = async (req, res, next) => {
   try {
-    const scans = await SoilScan.find().sort({ createdAt: -1 });
+    const scans = await SoilScan.find()
+      .select("_id selectedCrop createdAt")
+      .sort({ createdAt: -1 });
 
     res.json({
       success: true,
@@ -36,10 +39,20 @@ exports.getAllSoilScans = async (req, res, next) => {
   }
 };
 
-// GET BY ID
+// GET BY ID (FIXED)
 exports.getSoilScanById = async (req, res, next) => {
   try {
-    const scan = await SoilScan.findById(req.params.id);
+    const { id } = req.params;
+
+    // ✅ ID validation
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid scan ID",
+      });
+    }
+
+    const scan = await SoilScan.findById(id);
 
     if (!scan) {
       return res.status(404).json({
@@ -48,10 +61,32 @@ exports.getSoilScanById = async (req, res, next) => {
       });
     }
 
+    // ✅ Recreate display format (IMPORTANT)
+    const display = {
+      analysis: Object.entries(scan.analysis).map(([key, value]) => ({
+        nutrient: key,
+        level: value,
+      })),
+      recommendations: scan.recommendations.fertilizers.map((f) => ({
+        fertilizer: f.name.toUpperCase(),
+        quantity: Math.round(f.quantityKgPerHa / 2.5),
+        unit: "kg/acre",
+        message: `Apply ${Math.round(
+          f.quantityKgPerHa / 2.5
+        )} kg ${f.name.toUpperCase()} per acre.`,
+      })),
+      cost: {
+        total: scan.cost?.farm?.totalCost || 0,
+      },
+    };
+
     res.json({
       success: true,
       message: "Scan fetched",
-      data: scan,
+      data: {
+        raw: scan,
+        display,
+      },
     });
   } catch (err) {
     next(err);
@@ -61,7 +96,16 @@ exports.getSoilScanById = async (req, res, next) => {
 // DELETE
 exports.deleteSoilScan = async (req, res, next) => {
   try {
-    const scan = await SoilScan.findByIdAndDelete(req.params.id);
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid scan ID",
+      });
+    }
+
+    const scan = await SoilScan.findByIdAndDelete(id);
 
     if (!scan) {
       return res.status(404).json({
