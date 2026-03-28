@@ -1,142 +1,80 @@
 const SoilScan = require("../models/SoilScan");
-const { analyzeSoil } = require("../services/soilAnalysisService");
-const { getFertilizerRecommendation } = require("../services/fertilizerService");
-const { calculateQuantity } = require("../services/quantityService");
-const { calculateCost } = require("../services/costService");
-const { formatOutput } = require("../services/outputFormatterService");
-const { generateSchedule } = require("../services/scheduleService");
-const cropData = require("../data/cropData.json");
+const processSoilScan = require("../services/soilScanService");
 
-// ✅ CREATE Soil Scan
-async function createSoilScan(req, res) {
+// CREATE
+exports.createSoilScan = async (req, res, next) => {
   try {
-    const {
-      farmerInfo = {},
-      soilSample = {},
-      soilData,
-      selectedCrop,
-    } = req.body;
+    const result = await processSoilScan(req.body);
 
-    if (!soilData) {
-      return res.status(400).json({ message: "Soil data is required" });
-    }
+    const saved = await SoilScan.create(result.raw);
 
-    if (!selectedCrop) {
-      return res.status(400).json({ message: "Crop is required" });
-    }
-
-    if (!cropData[selectedCrop]) {
-      return res.status(400).json({ message: "Invalid crop selected" });
-    }
-
-    const analysis = analyzeSoil(soilData);
-
-    const fertilizers = getFertilizerRecommendation(analysis);
-
-    const finalFertilizers = calculateQuantity(
-      soilData,
-      analysis,
-      fertilizers,
-      selectedCrop
-    );
-
-    const filteredFertilizers = finalFertilizers.filter(
-      (f) => f.quantityKgPerHa > 0
-    );
-
-    const farmSize = soilSample?.farmSize || 1;
-
-    const costResult = calculateCost(filteredFertilizers, farmSize);
-
-    const schedule = generateSchedule({
-      crop: selectedCrop,
-      analysis,
-      fertilizers: filteredFertilizers,
-    });
-
-    const formatted = formatOutput({
-      analysis,
-      fertilizers: filteredFertilizers,
-      cost: costResult,
-      soilData,
-      soilSample,
-    });
-
-    const savedScan = await SoilScan.create({
-      farmerInfo,
-      soilSample,
-      soilData,
-      selectedCrop,
-      analysis,
-      recommendations: {
-        fertilizers: filteredFertilizers,
-        schedule,
-      },
-      cost: costResult,
-    });
-
-    return res.status(201).json({
-      message: "Soil scan processed successfully",
+    res.status(201).json({
+      success: true,
+      message: "Soil scan processed",
       data: {
-        id: savedScan._id,
-        display: formatted,
+        id: saved._id,
+        display: result.display,
       },
     });
-  } catch (error) {
-    console.error("Create Soil Scan Error:", error);
-
-    return res.status(500).json({
-      message: "Server error while processing soil scan",
-    });
+  } catch (err) {
+    next(err);
   }
-}
+};
 
-// ✅ GET ALL Soil Scans
-async function getAllSoilScans(req, res) {
+// GET ALL
+exports.getAllSoilScans = async (req, res, next) => {
   try {
     const scans = await SoilScan.find().sort({ createdAt: -1 });
 
-    return res.status(200).json({
-      message: "All soil scans fetched successfully",
+    res.json({
+      success: true,
+      message: "All scans fetched",
       data: scans,
     });
-  } catch (error) {
-    console.error("Get All Soil Scans Error:", error);
-
-    return res.status(500).json({
-      message: "Server error while fetching soil scans",
-    });
+  } catch (err) {
+    next(err);
   }
-}
+};
 
-// ✅ GET Soil Scan by ID
-async function getSoilScanById(req, res) {
+// GET BY ID
+exports.getSoilScanById = async (req, res, next) => {
   try {
-    const { id } = req.params;
-
-    const scan = await SoilScan.findById(id);
+    const scan = await SoilScan.findById(req.params.id);
 
     if (!scan) {
       return res.status(404).json({
-        message: "Soil scan not found",
+        success: false,
+        message: "Scan not found",
       });
     }
 
-    return res.status(200).json({
-      message: "Soil scan fetched successfully",
+    res.json({
+      success: true,
+      message: "Scan fetched",
       data: scan,
     });
-  } catch (error) {
-    console.error("Get Soil Scan By ID Error:", error);
-
-    return res.status(500).json({
-      message: "Server error while fetching soil scan",
-    });
+  } catch (err) {
+    next(err);
   }
-}
+};
 
-module.exports = {
-  createSoilScan,
-  getAllSoilScans,
-  getSoilScanById,
+// DELETE
+exports.deleteSoilScan = async (req, res, next) => {
+  try {
+    const scan = await SoilScan.findByIdAndDelete(req.params.id);
+
+    if (!scan) {
+      return res.status(404).json({
+        success: false,
+        message: "Scan not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Scan deleted successfully",
+    });
+  } catch (err) {
+    next(err);
+  }
 };

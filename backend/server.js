@@ -1,19 +1,31 @@
-require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const soilScanRoutes = require("./routes/soilScanRoutes");
 
-const app = require("./app");
+dotenv.config();
 
-const { connectDB } = require("./config/db");
+const app = express();
 
-const PORT = process.env.PORT || 5000;
+app.use(express.json());
 
-async function startServer() {
-  await connectDB();
-  app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+app.use("/api", soilScanRoutes);
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error("Global Error:", err);
+  res.status(500).json({
+    success: false,
+    message: "Internal Server Error",
   });
-}
-
-startServer().catch((error) => {
-  console.error(error);
-  process.exit(1);
 });
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB Connected");
+    app.listen(process.env.PORT || 5000, () =>
+      console.log("Server running")
+    );
+  })
+  .catch((err) => console.log(err));
